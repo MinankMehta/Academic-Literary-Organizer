@@ -1,3 +1,10 @@
+<?php
+// all required variables defined here
+session_start(); // start the session
+session_unset();// unset all session variables
+session_destroy();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +41,31 @@
                     </div>
                 </form>
             </div>
+            <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "academic_records";
+
+// Checking if the form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+{
+    // Establishing a connection to the database
+    $conn = new mysqli($servername,$username, $password, $dbname);
+
+    // Checking if the connection was successful
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Retrieving the email and password from the form submission
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $sql = "INSERT INTO `userdata` (`Emailid`, `Password`, `Type`, `name`) VALUES ('$email', '$password', 'student', '$Name')";
+    $result = $conn->query($sql);
+    echo "<br><br><span style='color: green;'>New User Added</span>";
+    $conn->close();
+}?>
         </div>
     </section>
 </body>

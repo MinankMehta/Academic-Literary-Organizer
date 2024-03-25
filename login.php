@@ -77,15 +77,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $_SESSION['loggedin'] = true;
                 
         // Perform actions based on user type (student, teacher, admin)
-        if ($userType === 'student') {
+        if ($userType === 'student' || $userType === 'Student') {
             // Student login logic
 		echo '<script>window.location.href = "homepage.php";</script>';
-        } elseif ($userType === 'teacher') {
-            // Teacher login logic
-		echo '<script>window.location.href = "homepage.php";</script>';
-        } elseif ($userType === 'admin') {
+        }
+        elseif ($userType === 'admin'|| $userType === 'Admin') {
             // Admin login logic
-		echo '<script>window.location.href = "adminpg.php";</script>';
+            echo '<script>window.location.href = "adminpg.php";</script>';
         }
     } else {
         // Invalid credentials

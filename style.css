@@ -1,3 +1,5 @@
+/* Previous CSS */
+
 body {
     color: #fff;
     font-family: 'Fira Sans', sans-serif;
@@ -5,11 +7,11 @@ body {
     margin: 0;
     overflow-x: hidden;
     position: relative;
-    min-height: 100vh; /* Ensure body covers entire viewport */
+    min-height: 100vh;
     background-image: url('campus.jpg');
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Fix the background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 body::before {
@@ -19,10 +21,10 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('campus.jpg'); /* Set the same image */
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the background image */
-    filter: blur(4px); /* Apply the blur effect */
+    background-image: url('campus.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
     z-index: -1;
 }
 
@@ -54,8 +56,8 @@ header {
 
 .form_container h2 {
     color:#710000;
-    font-family: 'Cardo', serif; /* Roboto font */
-    font-size: 24px; /* Adjusted font size */
+    font-family: 'Cardo', serif;
+    font-size: 24px;
     margin-bottom: 30px;
     margin-top:10px;
 }
@@ -82,16 +84,16 @@ header {
 .button_container {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px; /* Adjusted margin */
+    margin-top: 40px;
 }
 
 .loginbtn, .signupbtn {
-    background-color:  #AE0000;/* Transparent background */
+    background-color:  #AE0000;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    font-family: 'Cardo', serif; /* Roboto font */
+    font-family: 'Cardo', serif;
     font-size: 16px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
@@ -99,12 +101,7 @@ header {
 }
 
 .loginbtn:hover, .signupbtn:hover {
-    background-color: #710000; /* White with opacity as hover effect */
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
+    background-color: #710000;
 }
 
 .dropdown {
@@ -117,14 +114,14 @@ header {
     position: absolute;
     background-color: #fff;
     width: 160px;
-    max-height: 190px; /* Set a maximum height for the dropdown */
-    -webkit-overflow-y: auto; /* Enable vertical scrolling for Chrome */
-    overflow-y: auto; /* Enable vertical scrolling for other browsers */
+    max-height: 190px;
+    -webkit-overflow-y: auto;
+    overflow-y: auto;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
-    top: calc(100%); /* Adjust the position to be closer to the button */
-    left: 50%; /* Center the dropdown horizontally */
-    transform: translateX(-50%); /* Center the dropdown horizontally */
+    top: calc(100%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .dropdown-content a {
@@ -151,15 +148,83 @@ header {
     cursor: pointer;
     font-family: 'Cardo', serif;
     font-size: 16px;
-    padding: 10px 20px 10px 20px; /* Added padding on the right for the arrow */
+    padding: 10px 20px 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .option-btn .arrow {
-    margin-left: 10px; /* Add some space between the text and arrow */
+    margin-left: 10px;
 }
 
 .option-btn:hover {
+    background-color: #710000;
+}
+
+/* New CSS for Custom Dropdowns and Submit Button */
+
+.custom-select {
+    margin-bottom: 20px;
+}
+
+.custom-select label {
+    color: #fff;
+    font-family: 'Cardo', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #710000;
+    font-family: 'Cardo', serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.select-wrapper select:focus {
+    outline: none;
+    border-color: #AE0000;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #710000;
+    pointer-events: none;
+}
+
+.submit_btn {
+    background-color: #AE0000;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Cardo', serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+}
+
+.submit_btn:hover {
     background-color: #710000;
 }
