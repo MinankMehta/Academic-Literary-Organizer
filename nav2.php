@@ -155,6 +155,7 @@
                         <div class="select-wrapper">
                             <select id="type" name="type">
                                 <option value="">Select Type</option>
+                                    <option value="Youtube Links">Books</option>
                                     <option value="Youtube Links">Youtube Links</option>
                                     <option value="Youtube Links">Notes</option>
                                     <option value="Youtube Links">Important Questions</option>
