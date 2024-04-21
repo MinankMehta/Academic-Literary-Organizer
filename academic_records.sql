@@ -241,4 +241,22 @@ INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`) VALUES
 (4, 'MECH', 'Heat and Mass Transfer'),
 (4, 'MECH', 'Machine Shop practice-II');
 
--- --------------------------------------------------------
+-- Drop the table if it exists
+DROP TABLE IF EXISTS `discussion`;
+
+-- Create the discussion table
+CREATE TABLE `discussion` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `parent_comment` VARCHAR(500) NOT NULL,
+  `student` VARCHAR(1000) NOT NULL,
+  `post` VARCHAR(1000) NOT NULL,
+  `date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Insert data into the discussion table
+INSERT INTO `discussion` (`parent_comment`, `student`, `post`, `date`) 
+VALUES ('130', 'Eng. Vince', 'So, kindly, hurry and sign up', '2021-08-05 10:27:43');
+
+-- Add an index on the id column
+ALTER TABLE `discussion` ADD INDEX `idx_id` (`id`);
+
