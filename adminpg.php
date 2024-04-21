@@ -34,8 +34,10 @@
         <div class="dropdown">
             <button class="option-btn dropbtn">Options <span class="arrow">&#9662;</span></button>
             <div class="dropdown-content">
-                <a href="nav.php">Single User Update</a>
-                <a href="nav.php">Multiple User Update</a>
+                <a href="userupdate.php">Single User Update</a>
+                <a href="userupdate2.php">Multiple User Updates</a>
+                <a href="syllabusupdate.php">Single Subject Update</a>
+                <a href="syllabusupdate2.php">Multiple Subject Updates</a>
                 <a href="nav.php">Study Materials</a>
                 <a href="books.php">Search Books</a>
                 <a href="todo.php">Scheduler</a>
