@@ -71,6 +71,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <!-- Include Sortable library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=argue_demo&display=swap">
     <style>
         body {
