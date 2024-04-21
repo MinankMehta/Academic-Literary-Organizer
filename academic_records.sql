@@ -242,3 +242,35 @@ INSERT INTO `subjectdata` (`Semester`, `Branch`, `Subject`) VALUES
 (4, 'MECH', 'Machine Shop practice-II');
 
 -- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `linksdata`;
+CREATE TABLE `linksdata` (
+  `id` int(11) NOT NULL,
+  `branch` varchar(255) DEFAULT NULL,
+  `option` varchar(255) NOT NULL,
+  `Link` varchar(255) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `semester` int(11) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ALTER TABLE `linksdata`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `linksdata`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+DROP TABLE IF EXISTS `bookinfo`;
+CREATE TABLE `bookinfo` (
+  `bname` varchar(50) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `genre` varchar(50) NOT NULL,
+  `totalrating` int NOT NULL,
+  `rno` int NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `image` VARCHAR(50) NOT NULL,
+  `pdf` VARCHAR(50)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `bookinfo` (`bname`, `author`, `genre`, `totalrating`, `rno`, `name`, `image`, `pdf`) VALUES
+('Book 1', 'author 1', 'subject 1', 30, 6, 'user', 'book1', 'out');
