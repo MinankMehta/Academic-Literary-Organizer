@@ -5,9 +5,13 @@
         header("Location: login.php");
         exit();
     }
+    if (!isset($_SESSION['semester']) || !isset($_SESSION['branch'])) {
+        header("Location: nav.php");
+        exit();
+    }
     if(isset($_POST['subject']) && isset($_POST['type'])) {
         $_SESSION['subject'] = $_POST['subject'];
-        $_SESSION['type'] = $_POST['type'];
+        $_SESSION['option'] = $_POST['type'];
         header("Location: nav3.php");
         exit();
     } elseif(isset($_POST['submit'])) {
@@ -155,10 +159,9 @@
                         <div class="select-wrapper">
                             <select id="type" name="type">
                                 <option value="">Select Type</option>
-                                    <option value="Youtube Links">Books</option>
-                                    <option value="Youtube Links">Youtube Links</option>
-                                    <option value="Youtube Links">Notes</option>
-                                    <option value="Youtube Links">Important Questions</option>
+                                    <option value="Links">Links</option>
+                                    <option value="Notes">Notes</option>
+                                    <option value="Questions">Important Questions</option>
                             </select>
                             <span class="custom-arrow"></span>
                         </div>

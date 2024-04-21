@@ -228,3 +228,6 @@ header {
 .submit_btn:hover {
     background-color: #710000;
 }
+.black-text {
+    color: black;
+}
