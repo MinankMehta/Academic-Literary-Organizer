@@ -274,3 +274,41 @@ CREATE TABLE `bookinfo` (
 
 INSERT INTO `bookinfo` (`bname`, `author`, `genre`, `totalrating`, `rno`, `name`, `image`, `pdf`) VALUES
 ('Book 1', 'author 1', 'subject 1', 30, 6, 'user', 'book1', 'out');
+
+DROP TABLE IF EXISTS `discussion`;
+CREATE TABLE `discussion` (
+  `id` int(11) NOT NULL,
+  `parent_comment` varchar(500) NOT NULL,
+  `student` varchar(1000) NOT NULL,
+  `post` varchar(1000) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `discussion`
+--
+
+INSERT INTO `discussion` (`parent_comment`, `student`, `post`, `date`) 
+VALUES ('130', 'Eng. Vince', 'So, kindly, hurry and sign up', '2021-08-05 10:27:43');
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `discussion`
+--
+ALTER TABLE `discussion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `discussion`
+--
+ALTER TABLE `discussion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+COMMIT;

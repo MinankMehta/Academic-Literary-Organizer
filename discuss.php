@@ -6,10 +6,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="main.js"></script>
-
 <!-- Custom CSS -->
 <style>
   /* Body Styles */
@@ -18,18 +14,16 @@
   }
 
   /* Header Styles */
-  /* Header Styles */
-.header {
-  background-image: linear-gradient(to bottom, rgba(174, 0, 0, 0.5), rgba(174, 0, 0, 0.9)), url('header-bg.jpg'); /* Gradient background */
-  background-size: cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-  margin-bottom: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
+  .header {
+    background-image: linear-gradient(to bottom, rgba(174, 0, 0, 0.5), rgba(174, 0, 0, 0.9)), url('header-bg.jpg'); /* Gradient background */
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
 
   /* Header Content Styles */
   .header-content {
@@ -178,3 +172,20 @@
 
   </div>
 </div>
+
+<!-- Include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Include Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Include your custom JavaScript -->
+<script src="main.js"></script>
+
+<script>
+$(document).on("click", ".open-ReplyModal", function () {
+     var commentid = $(this).data('id');
+     $(".modal-body #commentid").val( commentid );
+});
+</script>
+
+</body>
+</html>
