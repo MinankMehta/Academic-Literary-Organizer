@@ -71,6 +71,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=argue_demo&display=swap">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,6 +89,9 @@ $conn->close();
 
         h1 {
             margin: 0;
+            font-family: 'argue_demo';
+            font-size: 32px; 
+            color:white;
         }
 
         #search-container {
@@ -221,7 +225,7 @@ $conn->close();
 </head>
 <body>
     <header>
-        <h1>To-Do List</h1>
+        <h1 style="font-family: 'argue_demo'; font-size: 32px; color:white;">To-Do List</h1>
         <div id="search-container">
             <form method="post">
                 <input type="text" name="search" placeholder="Search tasks...">
