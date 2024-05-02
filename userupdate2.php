@@ -7,7 +7,11 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type']
       header("Location: login.php"); 
       exit();
   }
-// INSERT INTO `notes` (`sno`, `title`, `description`, `tstamp`) VALUES (NULL, 'But Books', 'Please buy books from Store', current_timestamp());
+  function encryptPassword($password) {
+    return base64_encode($password);
+}
+
+  // INSERT INTO `notes` (`sno`, `title`, `description`, `tstamp`) VALUES (NULL, 'But Books', 'Please buy books from Store', current_timestamp());
 $insert = false;
 $update = false;
 $delete = false;
@@ -41,7 +45,7 @@ if (isset( $_POST["snoEdit"])){
     $Type = $_POST["type1Edit"];
 
   // Sql query to be executed
-  $sql = "UPDATE `userdata` SET `Emailid` = '$Emailid', `Password` = '$Password', `Type` = '$Type' , `name` = '$Name'  WHERE `userdata`.`sno` = $sno";
+  $sql = "UPDATE `userdata` SET `Emailid` = '$Emailid', `Type` = '$Type' , `name` = '$Name'  WHERE `userdata`.`sno` = $sno";
   $result = mysqli_query($conn, $sql);
   if($result){
     $update = true;
@@ -337,7 +341,7 @@ textarea{
             echo "<tr>
             <th scope='row'>". $sno . "</th>
             <td>". $row['Emailid'] . "</td>
-            <td>". $row['Password'] . "</td>
+            <td>". encryptPassword($row['Password']) . "</td>
             <td>". $row['name'] . "</td>
             <td>". $row['Type'] . "</td>
             <td><button class='edit btn btn-sm btn-primary editbtn' id=".$row['sno'].">Edit</button> <button class='delete btn btn-sm btn-primary delbtn' id=d".$row['sno'].">Delete</button>  </td>

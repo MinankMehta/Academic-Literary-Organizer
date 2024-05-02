@@ -312,3 +312,4 @@ ALTER TABLE `discussion`
 ALTER TABLE `discussion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 COMMIT;
+('Book 1', 'author 1', 'subject 1', 30, 6, 'user', 'book1', 'out');
