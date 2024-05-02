@@ -243,9 +243,9 @@ $conn->close();
             <textarea name="description" placeholder="Description" required></textarea>
             <select name="priority" required>
                 <option value="">Select Priority</option>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
                 <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
             </select>
             <input type="date" name="due_date" required>
             <button type="submit" name="add_task">Add Task</button>
@@ -253,9 +253,9 @@ $conn->close();
     </div>
 
     <main>
-        <div class="priority-column" id="low-priority-column">
-            <h2>Low Priority</h2>
-            <ul class="task-list low-priority" id="low-priority-tasks">
+        <div class="priority-column" id="high-priority-column">
+            <h2>High Priority</h2>
+            <ul class="task-list high-priority" id="high-priority-tasks">
                 <?php while ($row = $task_result->fetch_assoc()): ?>
                     <?php
                     $daysUntil = daysUntilDueDate($row['due_date']);
@@ -268,11 +268,11 @@ $conn->close();
                         $priorityClass = 'priority-red';
                     }
                     ?>
-                    <?php if ($row['priority'] === 'low'): ?>
+                    <?php if ($row['priority'] === 'high'): ?>
                         <li class="task-card <?php echo $priorityClass; ?>" id="task-<?php echo $row['id']; ?>" data-priority="<?php echo $row['priority']; ?>">
                             <h3><?php echo $row['title']; ?></h3>
                             <p><?php echo $row['description']; ?></p>
-                            <p>Due: <?php echo $row['due_date']; ?></p>
+                            <p>Due: <?php echo date('d/m/Y', strtotime($row['due_date'])); ?></p>
                             <form method="post">
                                 <input type="hidden" name="task_id" value="<?php echo $row['id']; ?>">
                                 <button type="submit" name="delete_task">Delete</button>
@@ -303,7 +303,7 @@ $conn->close();
                         <li class="task-card <?php echo $priorityClass; ?>" id="task-<?php echo $row['id']; ?>" data-priority="<?php echo $row['priority']; ?>">
                             <h3><?php echo $row['title']; ?></h3>
                             <p><?php echo $row['description']; ?></p>
-                            <p>Due: <?php echo $row['due_date']; ?></p>
+                            <p>Due: <?php echo date('d/m/Y', strtotime($row['due_date'])); ?></p>
                             <form method="post">
                                 <input type="hidden" name="task_id" value="<?php echo $row['id']; ?>">
                                 <button type="submit" name="delete_task">Delete</button>
@@ -314,9 +314,9 @@ $conn->close();
             </ul>
         </div>
 
-        <div class="priority-column" id="high-priority-column">
-            <h2>High Priority</h2>
-            <ul class="task-list high-priority" id="high-priority-tasks">
+        <div class="priority-column" id="low-priority-column">
+            <h2>Low Priority</h2>
+            <ul class="task-list low-priority" id="low-priority-tasks">
                 <?php $task_result->data_seek(0); // Reset result pointer ?>
                 <?php while ($row = $task_result->fetch_assoc()): ?>
                     <?php
@@ -330,11 +330,11 @@ $conn->close();
                         $priorityClass = 'priority-red';
                     }
                     ?>
-                    <?php if ($row['priority'] === 'high'): ?>
+                    <?php if ($row['priority'] === 'low'): ?>
                         <li class="task-card <?php echo $priorityClass; ?>" id="task-<?php echo $row['id']; ?>" data-priority="<?php echo $row['priority']; ?>">
                             <h3><?php echo $row['title']; ?></h3>
                             <p><?php echo $row['description']; ?></p>
-                            <p>Due: <?php echo $row['due_date']; ?></p>
+                            <p>Due: <?php echo date('d/m/Y', strtotime($row['due_date'])); ?></p>
                             <form method="post">
                                 <input type="hidden" name="task_id" value="<?php echo $row['id']; ?>">
                                 <button type="submit" name="delete_task">Delete</button>
