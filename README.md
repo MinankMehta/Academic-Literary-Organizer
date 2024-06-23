@@ -16,6 +16,7 @@
    - Implement a search function to access previous discussions.
 
 4. Filter Module:
+   
    4.1. Book Display:
    - Book containers showcase book covers, names, author names, and ratings out of 5.
 
@@ -35,7 +36,7 @@
    Non-Privileged Users:
      - Cannot add or delete books.
 
-5. Navigation and Online Material Module:
+6. Navigation and Online Material Module:
    - Develop a navigation system for easy access to different semesters, branches, and years.
    - Provide study materials such as YouTube links, reference books, notes, practical/viva questions, and important exam questions.
    - Implement an upvoting system for users to mark useful content.
